@@ -87,6 +87,7 @@ This work heavily utilizes and builds upon the **BIDCell** framework. We acknowl
 
 If you use this code or methods in your research, please cite our work:
 
+```
 @article{MOSeg2024,
   title={Cell Segmentation Using Spatial Transcriptomic Data From The Multi-objective Optimization Perspective},
   author={Garber Tara, Kwok Tszyi, Liu Ziying, Ooi Hsu Kiang, Necakov Aleksandar, Pan Youlian, Li Yifeng},
@@ -94,3 +95,4 @@ If you use this code or methods in your research, please cite our work:
   year={2026},
   note={Under Review at ISMB 2026}
 }
+```
