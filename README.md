@@ -1,17 +1,5 @@
 # MOSeg: Cell Segmentation Using Spatial Transcriptomic Data From The Multi-objective Optimization Perspective
 
-## Abstract
-
-**Motivation:** Accurate cell segmentation in spatial transcriptomics (ST) is critical but challenging due to conflicting optimization objectives. Current models like BIDCell rely on Single-Objective Optimization (SOO), which can struggle when combining multiple loss terms.
-
-**Result:** We propose a Multi-Objective Optimization (MOO) framework for ST segmentation, integrating Aligned Multi-Task Learning (AMTL) and Smooth Tchebycheff (STCH) into BIDCell. Additionally, a new multiple assignment loss replaces the non-converging overlap loss. Results demonstrate that **AMTL provides faster, more stable training and improved gene/transcript coverage compared to scalarization methods**. This work represents the first application of MOO to ST cell segmentation, showing that gradient alignment significantly enhances performance.
-
-**Availability:** <https://github.com/bkty1122/MOSeg>
-
-**Contact:** <yli2@brocku.ca>
-
----
-
 ## Overview
 
 **MOSeg** introduces a **Multi-Objective Optimization (MOO)** framework for cell segmentation in spatial transcriptomics. By integrating methods like **Aligned Multi-Task Learning (AMTL)** and **Smooth Tchebycheff (STCH)** scalarization into the [BIDCell](https://github.com/SydneyBioX/BIDCell) architecture, MOSeg addresses the challenges of conflicting loss functions in self-supervised learning.
@@ -19,22 +7,6 @@
 Specifically, we utilize **AMTL** to dynamically align the gradients of varying loss objectives during training. This ensures that updates to one objective do not conflict with or degrade others, resolving gradient dominance issues and resulting in improved segmentation stability, faster convergence, and better handling of varied biological signals compared to traditional single-objective optimization methods.
 
 ![Workflow](Figure1.png)
-
-## Visual Demonstration
-
-The following figures illustrate the comparative performance of MOSeg against standard methods. We observe that **AMTL** consistently delivers superior stability and transcript coverage, effectively handling conflicting objectives across various learning rates.
-
-### Normalized Spatial Measures
-
-![Normalized Spatial Measures](norm-spatial-by-method.png)
-
-*Normalized spatial measures by method at baseline (losses are neither ablated nor emphasized). The default weighted sum method is used as a reference. AMTL produced cells with much larger transcript coverage, density, and cell area compared to scalarization methods, with best results for median-mode. LR = 10⁻⁷.*
-
-### Learning Rate Exploration
-
-![Learning Rate Exploration](lr-exploration-by-method.png)
-
-*Demonstration of the difference by learning rates. Rows represent initial R = 10⁻⁵, ..., 10⁻⁹, and columns represent the three methods, next to the original DAPI nuclei images.*
 
 ## Repository Structure
 
@@ -77,6 +49,22 @@ python example_small.py
 
 Check `example_small.py` to see how to configure the model, load data, and run the segmentation.
 
+## Visual Demonstration
+
+The following figures illustrate the comparative performance of MOSeg against standard methods. We observe that **AMTL** consistently delivers superior stability and transcript coverage, effectively handling conflicting objectives across various learning rates.
+
+### Normalized Spatial Measures
+
+![Normalized Spatial Measures](norm-spatial-by-method.png)
+
+*Normalized spatial measures by method at baseline (losses are neither ablated nor emphasized). The default weighted sum method is used as a reference. AMTL produced cells with much larger transcript coverage, density, and cell area compared to scalarization methods, with best results for median-mode. LR = 10⁻⁷.*
+
+### Learning Rate Exploration
+
+![Learning Rate Exploration](lr-exploration-by-method.png)
+
+*Demonstration of the difference by learning rates. Rows represent initial R = 10⁻⁵, ..., 10⁻⁹, and columns represent the three methods, next to the original DAPI nuclei images.*
+
 ## Credits
 
 This work heavily utilizes and builds upon the **BIDCell** framework. We acknowledge and thank the authors of [BIDCell](https://github.com/SydneyBioX/BIDCell) for their open-source contribution to the community.
@@ -96,3 +84,10 @@ If you use this code or methods in your research, please cite our work:
   note={Under Review at ISMB 2026}
 }
 ```
+
+## Contact
+
+For any questions or issues, please feel free to open an issue on GitHub or contact the authors.
+
+- Authors: Tara Garber, Tszyi Kwok, Ziying Liu, Hsu Kiang Ooi, Aleksandar Necakov, Youlian Pan, Yifeng Li
+- Contact: Yifeng Li (<yi2@brocku.ca>)
