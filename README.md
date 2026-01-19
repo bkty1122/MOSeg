@@ -55,13 +55,13 @@ The following figures illustrate the comparative performance of MOSeg against st
 
 ![Normalized Spatial Measures](norm-spatial-by-method.png)
 
-*Normalized spatial measures by method at baseline (losses are neither ablated nor emphasized). The default weighted sum method is used as a reference. AMTL produced cells with much larger transcript coverage, density, and cell area compared to scalarization methods, with best results for median-mode. LR = 10⁻⁷.*
+Normalized spatial measures by method at baseline (losses are neither ablated nor emphasized). The default weighted sum method is used as a reference. AMTL produced cells with much larger transcript coverage, density, and cell area compared to scalarization methods, with best results for median-mode. LR = 10⁻⁷.*
 
 ### Learning Rate Exploration
 
 ![Learning Rate Exploration](lr-exploration-by-method.png)
 
-*Demonstration of the difference by learning rates. Rows represent initial R = 10⁻⁵, ..., 10⁻⁹, and columns represent the three methods, next to the original DAPI nuclei images.*
+Demonstration of the difference by learning rates. Rows represent initial R = 10⁻⁵, ..., 10⁻⁹, and columns represent the three methods, next to the original DAPI nuclei images.*
 
 ## Credits
 
