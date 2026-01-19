@@ -6,8 +6,6 @@
 
 Specifically, we utilize **AMTL** to dynamically align the gradients of varying loss objectives during training. This ensures that updates to one objective do not conflict with or degrade others, resolving gradient dominance issues and resulting in improved segmentation stability, faster convergence, and better handling of varied biological signals compared to traditional single-objective optimization methods.
 
-![Workflow](Figure1.png)
-
 ## Repository Structure
 
 This repository follows a streamlined structure. Data files should be placed in the `data/` directory as described below.
